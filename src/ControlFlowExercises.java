@@ -14,7 +14,7 @@ public class ControlFlowExercises {
 
         //do while loop
         //count by 2's stating with 0 and ending at 100. Follow each num with a new line
-//        i = 0;
+//        int i = 0;
 //        do {
 //            i = i + 2;
 //            System.out.println("i is: " + i);
@@ -22,6 +22,7 @@ public class ControlFlowExercises {
 
 
         // count backwards by 5's starting from 100 to -10
+        //int i = 0;
 //        do {
 //            i = i - 5;
 //            System.out.println("i is now: " + i);
@@ -100,31 +101,34 @@ public class ControlFlowExercises {
 //        while (!choice.equalsIgnoreCase("n"));
 
         //convert number grades into letter grades (From 0-100)
-        System.out.print("Enter your number grade: ");
-        int number = sc.nextInt();
-                String choice = "y";
+        System.out.println("Would you like to look at your letter grades?");
+        String confirm = sc.next();
 
-        do {
-            if (number > 0 && number < 60) {
-                System.out.println("Your grade is F");
-            } else if (number > 60 && number < 67) {
-                System.out.println("Your grade is D");
-            } else if (number > 67 && number < 80) {
-                System.out.println("Your grade is C");
+        while (confirm.equalsIgnoreCase("YES")) {
+            System.out.println("What was your numeric grade?");
+            int grade = sc.nextInt();
 
-            } else if (number > 80 && number < 88) {
-                System.out.println("Your grade is B");
-
+            char letterGrade;
+            if (grade > 100)  {
+                System.out.println("That's impossible. No one can give more than one hundred percent. By definition that is the most anyone can give.");
+                continue;
+            } else if (grade >= 90) {
+                letterGrade = 'A';
+            } else if (grade >= 80) {
+                letterGrade = 'B';
+            } else if (grade >= 70) {
+                letterGrade = 'C';
+            } else if (grade >= 60) {
+                letterGrade = 'D';
             } else {
-                System.out.println("Your grade is A");
-
+                letterGrade = 'F';
             }
-            System.out.print("Continue? (y/n): ");
-            choice = sc.next();
-            System.out.println();
 
-        }while (!choice.equalsIgnoreCase("n"));
-        sc.nextLine();
+            System.out.printf("Congratulations you got a %c.%n", letterGrade);
+
+            System.out.println("Would you like to look at your letter grades?");
+            confirm = sc.next();
+        }
 
 
     }

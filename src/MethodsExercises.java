@@ -81,8 +81,8 @@ public class MethodsExercises {
     public static int modulus(int num1, int num2) {
         return num1 % num2;
     }
-    public static int getInteger(int min, int max) {
-
-    }
+//    public static int getInteger(int min, int max) {
+//
+//    }
 
 }

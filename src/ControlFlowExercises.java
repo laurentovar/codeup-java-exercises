@@ -10,24 +10,32 @@ public class ControlFlowExercises {
 ////            System.out.println("i is " + i);
 ////            i++;
 ////        }
+
+
         //do while loop
         //count by 2's stating with 0 and ending at 100. Follow each num with a new line
+//        i = 0;
 //        do {
 //            i = i + 2;
 //            System.out.println("i is: " + i);
 //        }while (i <= 100);
+
+
         // count backwards by 5's starting from 100 to -10
 //        do {
 //            i = i - 5;
 //            System.out.println("i is now: " + i);
 //        }while (i >= -10);
+
+
         //create a do-while loop that starts at 2 and displays the number squared on each line
             //while new number is less than 1,000,000
+//            // long y = 2L;
 //            do {
-//                long y = 2;
 //
-//              System.out.println(Math.sqrt(y));
-//            }while (i < 1000000);
+//              System.out.println(y);
+                //y *= y;
+//            }while (i < 1000000L);
 
         //do a for loop now
 //        for (double y = 2; i <= 1000000; i++){

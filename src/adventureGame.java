@@ -55,7 +55,7 @@ public class adventureGame {
            System.out.println("Hi hero what is your name?");
             userName = scanner.nextLine();
 
-            //====player and monster health===
+            //====player and monster health starting with===
             playerHealth = 10;
             monsterHealth = 15;
 
@@ -65,7 +65,8 @@ public class adventureGame {
             //welcome user
            System.out.println("\n------------------------------------------------------------------\n");
 
-           System.out.println("     /\\\n" +
+            System.out.println("Welcome " + userName + "!");
+            System.out.println("     /\\\n" +
                    "      ||\n" +
                    "      ||\n" +
                    "      ||\n" +
@@ -91,23 +92,24 @@ public class adventureGame {
                    "              /____/\\____\\");
 
            System.out.println("----------------------------------------");
-           System.out.println("Welcome " + userName + "!");
            System.out.println("Your health: " +playerHealth);
            System.out.println("Your weapon: " +playerWeapon);
            System.out.println("Lets start your adventure!");
            scanner.nextLine();
            System.out.println("\n------------------------------------------------------------------\n");
-           townGate();
+           townGate();//call townGate to continue
 
 
-       }else if (input.equalsIgnoreCase("n"))
-           System.out.println("Exited the game!");
+       }else {
+            //if they dont want to play game exit
+            System.out.println("Exited the game!");
+        }
 
 
 
     }
     public static void townGate (){
-        System.out.println("You are in front of the castle gate.");
+        System.out.println( userName + " you are in front of the castle gate.");
         System.out.println("   .\n" +
                 "  /:\\\n" +
                 "  |:|\n" +
@@ -132,6 +134,7 @@ public class adventureGame {
                 "                                                               ______\n");
         scanner.nextLine();
         System.out.println("\n------------------------------------------------------------------\n");
+
         System.out.println("A guard appears in front of you.");
 
         System.out.println("                   _.--.    .--._\n" +
@@ -164,10 +167,10 @@ public class adventureGame {
         if(choice == 1){
             //once you defeat the dragon come back to talk to the guard
             if(emerald == 1){
-                ending();
+                ending();//makes the ending run
             }
             else{
-                System.out.println("Guard: \"Hello there, " + userName + "! Sorry but I cannot let you in. You have been exiled and were told to never return!  \nGet out of here!\"");
+                System.out.println("Guard: Hello there, " + userName + "! Sorry but I cannot let you in. You have been exiled and were told to never return!  \nGet out of here!");
                 enterScanner.nextLine();
                 townGate();
             }
@@ -175,13 +178,14 @@ public class adventureGame {
         }
         else if(choice == 2){
             playerHealth = playerHealth -1;
-            System.out.println("Guard: Hey don't be stupid!\n\nThe guard hits you so hard that you know he means business.\n(You receive 1 damage)\n");
+
+            System.out.println("Guard: Hey don't be stupid!\nThe guard hits you so hard that you know he means business.\n(You receive 1 damage point)\n");
             System.out.println("Your health is now: " + playerHealth);
             enterScanner.nextLine();
             townGate();
         }
         else if(choice == 3){
-            crossRoad();
+            crossRoad();//takes you to crossroad
         }
         else{
             townGate();
@@ -227,7 +231,9 @@ public class adventureGame {
     }
 
     public  static void north(){
+        //north will give you health
         System.out.println("\n------------------------------------------------------------------\n");
+        System.out.println("There is a water well.");
         System.out.println("               __\n" +
                 "               .'/\\'.\n" +
                 "             .'-/__\\-'.\n" +
@@ -259,7 +265,7 @@ public class adventureGame {
                 ";:'   '-._    '._) '._)   _.-'\n" +
                 "  LGB      `---..____..---'   ;:`\n" +
                 "   ;:'      ;:'.:;     ;;\"");
-        System.out.println("There is a water well. You drink the water and rest at the riverside.");
+        System.out.println("You drink the water and rest at the riverside.");
         System.out.println("\n------------------------------------------------------------------\n");
         scanner.nextLine();
 
@@ -267,7 +273,7 @@ public class adventureGame {
         //adds one to the playerhealth
         playerHealth = playerHealth + 1;
         System.out.println("Your health is now: " + playerHealth);
-        System.out.println("\n\n1: Go back to the crossroad");
+        System.out.println("\n1: Go back to the crossroad");
         System.out.println("\n------------------------------------------------------------------\n");
 
         choice = scanner.nextInt();
@@ -281,6 +287,7 @@ public class adventureGame {
     }
 
     public static void east(){
+        //east will give you a new weapon
         System.out.println("\n------------------------------------------------------------------\n");
         System.out.println("You walked into a forest and found a new weapon!");
         System.out.println("   ,   A           {}\n" +
@@ -311,8 +318,8 @@ public class adventureGame {
 
         choice = scanner.nextInt();
 
-        if(choice==1){
-            crossRoad();
+        if(choice == 1){
+            crossRoad();//go back to crossroad
         }
         else{
             east();
@@ -320,6 +327,7 @@ public class adventureGame {
     }
 
     public static void west(){
+        //west will have a dragon confront you
         System.out.println("\n------------------------------------------------------------------\n");
         System.out.println("You encounter a dragon!\n");
         System.out.println("                                               _   __,----'~~~~~~~~~`-----.__\n" +
@@ -361,7 +369,7 @@ public class adventureGame {
 
     public static void fight(){
         System.out.println("\n------------------------------------------------------------------\n");
-        System.out.println("Stats:");
+        System.out.println("Health Stats:");
         System.out.println("                                   ___\n" +
                 "                                  {(.)}\n" +
                 "                                   :z:\n" +
@@ -381,8 +389,8 @@ public class adventureGame {
                 "                          ',       | |       ,'\n" +
                 "                            `,     | |     ,'\n" +
                 "                              `,   | |   ,'\n" +
-                "                                `, | | ,'  xig\n" +
-                "                                  `| |'    xag\n" +
+                "                                `, | | ,'     \n" +
+                "                                  `| |'       \n" +
                 "                                   | |\n" +
                 "                                   \\ /\n" +
                 "                                    '");
@@ -393,8 +401,7 @@ public class adventureGame {
         System.out.println("Stats for Dragon:");
         System.out.println("Dragon health: " + monsterHealth);
 
-        scanner.nextLine();
-        System.out.println("After seeing the stats, what do you want to do?");
+        System.out.println("After seeing these health stats, what do you want to do?");
         System.out.println("\n1: Attack");
         System.out.println("2: Run");
         System.out.println("\n------------------------------------------------------------------\n");
@@ -420,13 +427,13 @@ public class adventureGame {
             //gets a random number from 0-5
             playerDamage = new java.util.Random().nextInt(5);
         }
+        //only works if you have the axe
         else if(playerWeapon.equalsIgnoreCase("Axe")){
             //gets a random number from 0-8
             playerDamage = new java.util.Random().nextInt(8);
         }
 
         //attack the dragon
-        scanner.nextLine();
         System.out.println("You attacked the Dragon!");
 
         System.out.println("                            ==(W{==========-      /===-\n" +
@@ -461,17 +468,15 @@ public class adventureGame {
         monsterHealth = monsterHealth - playerDamage;
 
         System.out.println("Dragon health is now: " + monsterHealth);
-        scanner.nextLine();
 
         if(monsterHealth <1 ){
-            win();
+            win();//calls when the monster reaches 0
         } else if(monsterHealth > 0){
             int monsterDamage =0;
 
             //gets a random number from 0-4
             monsterDamage = new java.util.Random().nextInt(4);
 
-             scanner.nextLine();
              System.out.println("The Dragon attacked you!");
 
 
@@ -507,18 +512,18 @@ public class adventureGame {
             System.out.println("Player health is now: " + playerHealth);
 
             if(playerHealth < 1){
-                dead();
+                dead(); //calls if the player reaches 0
             } else if(playerHealth > 0){
                 fight();
             }
         }
-
+        scanner.nextLine();
 
     }
 
     public static void dead(){
         System.out.println("\n------------------------------------------------------------------\n");
-        System.out.println("You are dead!!!");
+        System.out.println("                 You are dead!!! \n");
         System.out.println("                            ,--.\n" +
                 "                           {    }\n" +
                 "                           K,   }\n" +
@@ -545,7 +550,7 @@ public class adventureGame {
                 "          `'{_            )\n" +
                 "              ^^\\..___,.--`");
 
-        System.out.println("\n\nGAME OVER");
+        System.out.println("\n\n               GAME OVER");
         System.out.println("\n------------------------------------------------------------------\n");
 
     }
@@ -580,6 +585,7 @@ public class adventureGame {
     public static void ending(){
         System.out.println("\n------------------------------------------------------------------\n");
         scanner.nextLine();
+        System.out.println(userName + " the brave hero looks at the guard");
         System.out.println("                    .oo.\n" +
                 "                       .\\.                                            ..\n" +
                 "                     ,'..''\\                                  ...oooo''\n" +
@@ -603,11 +609,33 @@ public class adventureGame {
                 "         |--|      |--|     ./--/'    \\--\\.\n" +
                 "         '\\-|      '\\-|    /--/'       \\--|\n" +
                 " dp       |..\\      |..\\  |..\\          |..\\");
-        System.out.println("Guard: Oh you killed that Dragon!?!? No way!!");
-        System.out.println("Guard: Well you proved yourself! Exile lifted! \n Welcome back to Howlers Keep.");
         scanner.nextLine();
 
-        System.out.println("\n\n           THE END                    ");
+        System.out.println("                   _.--.    .--._\n" +
+                "                 .\"  .\"      \".  \".\n" +
+                "                ;  .\"    /\\    \".  ;\n" +
+                "                ;  '._,-/  \\-,_.`  ;\n" +
+                "                \\  ,`  / /\\ \\  `,  /\n" +
+                "                 \\/    \\/  \\/    \\/\n" +
+                "                 ,=_    \\/\\/    _=,\n" +
+                "                 |  \"_   \\/   _\"  |\n" +
+                "                 |_   '\"-..-\"'   _|\n" +
+                "                 | \"-.        .-\" |\n" +
+                "                 |    \"\\    /\"    |\n" +
+                "                 |      |  |      |\n" +
+                "         ___     |      |  |      |     ___\n" +
+                "     _,-\",  \",   '_     |  |     _'   ,\"  ,\"-,_\n" +
+                "   _(  \\  \\   \\\"=--\"-.  |  |  .-\"--=\"/   /  /  )_\n" +
+                " ,\"  \\  \\  \\   \\      \"-'--'-\"      /   /  /  /  \".\n" +
+                "!     \\  \\  \\   \\                  /   /  /  /     !\n" +
+                ":      \\  \\  \\   \\                /   /  /  /      TK\n");
+
+        scanner.nextLine();
+        System.out.println("Guard: Oh you killed that Dragon!?!? No way!!");
+        System.out.println("Guard: Well you proved yourself! Exile lifted! \nWelcome back to Howlers Keep.");
+        scanner.nextLine();
+
+        System.out.println("\n\n                            THE END                    ");
         System.out.println("       .         .      /\\      .:  *       .          .              .\n" +
                 "                 *    .'  `.      .     .     *      .                  .\n" +
                 "  :             .    /      \\  _ .________________  .                    .\n" +

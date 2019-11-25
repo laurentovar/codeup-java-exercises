@@ -2,6 +2,9 @@ import java.util.Scanner;
 public class MethodsExercises {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+       //Highlow guess
+        HighLow();
+
         //Dice rolls
         diceRolling();
 
@@ -39,6 +42,8 @@ public class MethodsExercises {
 
         //Factorial
         calculateFactorial();
+
+
 
 
 
@@ -173,6 +178,28 @@ public class MethodsExercises {
     public static int getRandomNumber (int range, int min){
         return (int)(Math.random() * range) + min;
     }
+    public static void HighLow (){
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
+        int randomNumber = getRandomNumber(100, 1);
+        System.out.println(randomNumber);
+
+        System.out.println("Guess my number. Pick a number between 1-100");
+       int guessNumber = scanner.nextInt();
+
+        while (guessNumber != randomNumber){
+            if (guessNumber < randomNumber){
+                System.out.println("Go higher");
+            }
+            else {
+                System.out.println("Go lower");
+
+            }
+            System.out.println("Try again.");
+            guessNumber = scanner.nextInt();
+        }
+        System.out.println("Good good! You guessed the right number!");
+
+    }
 
 }

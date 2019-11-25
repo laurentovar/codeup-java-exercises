@@ -155,7 +155,6 @@ public class adventureGame {
 
         scanner.nextLine();
         System.out.println("What do you want to do?");
-        scanner.nextLine();
         System.out.println("1: Be his friend and talk to him");
         System.out.println("2. Attack the guard with your sword!");
         System.out.println("3. Leave the guard alone");
@@ -362,6 +361,7 @@ public class adventureGame {
 
     public static void fight(){
         System.out.println("\n------------------------------------------------------------------\n");
+        System.out.println("Stats:");
         System.out.println("                                   ___\n" +
                 "                                  {(.)}\n" +
                 "                                   :z:\n" +
@@ -388,11 +388,13 @@ public class adventureGame {
                 "                                    '");
         System.out.println("Stats for player:");
         System.out.println("Your health: "+ playerHealth);
+
+        System.out.println("---------------------------");
         System.out.println("Stats for Dragon:");
         System.out.println("Dragon health: " + monsterHealth);
 
         scanner.nextLine();
-        System.out.println("What do you want to do now?");
+        System.out.println("After seeing the stats, what do you want to do?");
         System.out.println("\n1: Attack");
         System.out.println("2: Run");
         System.out.println("\n------------------------------------------------------------------\n");
@@ -424,6 +426,9 @@ public class adventureGame {
         }
 
         //attack the dragon
+        scanner.nextLine();
+        System.out.println("You attacked the Dragon!");
+
         System.out.println("                            ==(W{==========-      /===-\n" +
                 "                              ||  (.--.)         /===-_---~~~~~~~~~------____\n" +
                 "                              | \\_,|**|,__      |===-~___                _,-'`\n" +
@@ -451,11 +456,12 @@ public class adventureGame {
                 "    `~/  )` ) ,/|                 ~-_~>--<_/-__       __-~ _/\n" +
                 "  ._-~//( )/ )) `                    ~~-'_/_/ /~~~~~~~__--~\n" +
                 "   ;'( ')/ ,)(                              ~~~~~~~~~~");
-        System.out.println("You attacked the Dragon and gave " + playerDamage + " damage!");
+        System.out.println("The dragon got " + playerDamage + " damage points!");
 
         monsterHealth = monsterHealth - playerDamage;
 
         System.out.println("Dragon health is now: " + monsterHealth);
+        scanner.nextLine();
 
         if(monsterHealth <1 ){
             win();
@@ -465,8 +471,9 @@ public class adventureGame {
             //gets a random number from 0-4
             monsterDamage = new java.util.Random().nextInt(4);
 
+             scanner.nextLine();
+             System.out.println("The Dragon attacked you!");
 
-            scanner.nextLine();
 
             System.out.println("                                 ` )\n" +
                     "                              (         (\n" +
@@ -493,7 +500,7 @@ public class adventureGame {
                     "              `:.          __`--.--'\\\n" +
                     "         -bf-  `:.      --'     __   `.");
 
-            System.out.println("The Dragon attacked you and gave " + monsterDamage + " damage!");
+            System.out.println("You got " + monsterDamage + " damage points!");
 
             playerHealth = playerHealth - monsterDamage;
 
@@ -547,7 +554,6 @@ public class adventureGame {
         System.out.println("\n------------------------------------------------------------------\n");
         System.out.println("You killed the Dragon!");
         System.out.println("The Dragon dropped a gem!");
-        scanner.nextLine();
         System.out.println("" +
                 "            _______\n" +
                 "        .'_/_|_\\_'.\n" +
@@ -573,9 +579,62 @@ public class adventureGame {
 
     public static void ending(){
         System.out.println("\n------------------------------------------------------------------\n");
+        scanner.nextLine();
+        System.out.println("                    .oo.\n" +
+                "                       .\\.                                            ..\n" +
+                "                     ,'..''\\                                  ...oooo''\n" +
+                "                     |  \\_/'                          ...oooo'''\n" +
+                "                     /''.'\\               .   ...oooo'''\n" +
+                "                    |  | '|           ...o!oo'''\n" +
+                "                    |  |  |.  ...oooo''./    '\\\n" +
+                "                    |  '\\, ''''\\     ./    ./\\ '\\.\n" +
+                "                  /\\ooo''|''''-/ -../    / \\''   '\\.\n" +
+                "                 /  '\\.  '|.''\\--/-+-+-+-+-+-+-+-+.'\n" +
+                "           ....- \\.    \\.  '\\-'/',,   /'---/' '''\n" +
+                "        ././     ''\\.-.-.\\   '\\|   '',,\\--;\n" +
+                "       /-/|             |-'\\.  '>       '\\\\\n" +
+                "      !--!|            /---/' ./'          |\n" +
+                "      !--!!          ./---/' ,/|           |\n" +
+                "    ./'-/'|          |----\\  \\-|           |\n" +
+                "  ./'--/  |..........|''''''./'|...........|\n" +
+                " -'-'-'   '/---/\\---|'          '/-\\--\\''''\n" +
+                "          /--/'  |--\\          ./---\\--\\\n" +
+                "         |--|     \\--\\.       ./--/' \\--\\\n" +
+                "         |--|      |--|     ./--/'    \\--\\.\n" +
+                "         '\\-|      '\\-|    /--/'       \\--|\n" +
+                " dp       |..\\      |..\\  |..\\          |..\\");
         System.out.println("Guard: Oh you killed that Dragon!?!? No way!!");
         System.out.println("Guard: Well you proved yourself! Exile lifted! \n Welcome back to Howlers Keep.");
+        scanner.nextLine();
+
         System.out.println("\n\n           THE END                    ");
+        System.out.println("       .         .      /\\      .:  *       .          .              .\n" +
+                "                 *    .'  `.      .     .     *      .                  .\n" +
+                "  :             .    /      \\  _ .________________  .                    .\n" +
+                "       |            `.+-~~-+.'/.' `.^^^^^^^^\\~~~~~\\.                      .\n" +
+                " .    -*-   . .       |u--.|  /     \\~~~~~~~|~~~~~|\n" +
+                "       |              |   u|.'       `.\" \"  |\" \" \n" +
+                "                                                 \"|                        .\n" +
+                "    :            .    |.u-./ _..---.._ \\\" \" | \" \" |\n" +
+                "   -*-            *   |    ~-|U U U U|-~____L_____L_                      .\n" +
+                "    :         .   .   |.-u.| |..---..|\"//// ////// /\\       .            .\n" +
+                "          .  *        |u   | |       |// /// // ///==\\     / \\          .\n" +
+                " .          :         |.--u| |..---..|//////~\\////====\\   /   \\       .\n" +
+                "      .               | u  | |       |~~~~/\\u |~~|++++| .`+~~~+'  .\n" +
+                "                      |.-|~U~U~|---..|u u|u | |u ||||||   |  U|\n" +
+                "                   /~~~~/-\\---.'     |===|  |u|==|++++|   |   |\n" +
+                "          aaa      |===| _ | ||.---..|u u|u | |u ||HH||U~U~U~U~|        aa@@\n" +
+                "     aaa@@@@@@aa   |===|||||_||      |===|_.|u|_.|+HH+|_/_/_/_/aa    a@@@@@@\n" +
+                " aa@@@@@@@@@@@@@@a |~~|~~~~\\---/~-.._|--.---------.~~~`.__ _.@@@@@@a    ~~~~\n" +
+                "   ~~~~~~    ~~~    \\_\\\\ \\  \\/~ //\\  ~,~|  __   | |`.   :||  ~~~~\n" +
+                "                     a\\`| `   _//  | / _| || |  | `.'  ,''|     aa@@@@@@@a\n" +
+                " aaa   aaaa       a@@@@\\| \\  //'   |  // \\`| |  `.'  .' | |  aa@@@@@@@@@@@a\n" +
+                "@@@@@a@@@@@@a      ~~~~~ \\\\`//| | \\ \\//   \\`  .-'  .' | '/      ~~~~~  ~~\n" +
+                "@S.C.E.S.W.@@@@a          \\// |.`  ` ' /~  :-'   .'|  '/~aa\n" +
+                "~~~~~~~ ~~~~~~         a@@@|   \\\\ |   // .'    .'| |  |@@@@@@a\n" +
+                "                    a@@@@@@@\\   | `| ''.'     .' | ' /@@@@@@@@@a       _\n" +
+                "S.C.E.S.W                                                            _| |_");
+
         System.out.println("\n------------------------------------------------------------------\n");
     }
 

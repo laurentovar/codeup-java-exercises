@@ -2,6 +2,8 @@ import java.util.Scanner;
 public class MethodsExercises {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+        //Dice rolls
+        diceRolling();
 
         //addition
         System.out.println("Addition result of 3 + 5 =  " + addition(3, 5));
@@ -35,9 +37,9 @@ public class MethodsExercises {
             System.out.println("You are in Range");
         }
 
-
         //Factorial
         calculateFactorial();
+
 
 
 
@@ -110,7 +112,7 @@ public class MethodsExercises {
                 System.out.println("It equals: " + factorial);
             } else if (yesNo.equalsIgnoreCase("n")){
                 //exit
-                System.out.println("I hit no");
+                System.out.println("Exit");
 
             }else {
                 System.out.println("Invalid. You entered a wrong character.");
@@ -122,9 +124,32 @@ public class MethodsExercises {
             System.out.println("Your number is outside the range. Try again.");
             calculateFactorial();
         }
+    }
+    public static void diceRolling (){
+        Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+
+        System.out.println("Enter the number of sides for a pair of dice: ");
 
 
+        int diceSides = scanner.nextInt();
+
+
+        System.out.println("Do you want to roll the dice? Y/N?");
+        scanner.nextLine();
+        String yesNo = scanner.nextLine();
+
+        if (yesNo.equalsIgnoreCase("y")){
+            //continue
+        } else if (yesNo.equalsIgnoreCase("n")){
+            //exit
+            System.out.println("Exit");
+        }
+        else {
+            System.out.println("Invalid. You entered a wrong character.");
+            diceRolling();
+        }
 
     }
+
 
 }

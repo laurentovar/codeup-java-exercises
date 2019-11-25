@@ -201,5 +201,6 @@ public class MethodsExercises {
         System.out.println("Good good! You guessed the right number!");
 
     }
+    //console adventure game in adventureGame.java
 
 }

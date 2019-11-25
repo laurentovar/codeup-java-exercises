@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class adventureGame {
     //sets the scanner global
     public static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
-    public static Scanner enterScanner = new Scanner(System.in);
 
 
     //player properties
@@ -65,7 +64,7 @@ public class adventureGame {
             //welcome user
            System.out.println("\n------------------------------------------------------------------\n");
 
-            System.out.println("Welcome " + userName + "!");
+            System.out.println("          Welcome " + userName + "!");
             System.out.println("     /\\\n" +
                    "      ||\n" +
                    "      ||\n" +
@@ -92,8 +91,8 @@ public class adventureGame {
                    "              /____/\\____\\");
 
            System.out.println("----------------------------------------");
-           System.out.println("Your health: " +playerHealth);
-           System.out.println("Your weapon: " +playerWeapon);
+           System.out.println("Your health: " + playerHealth);
+           System.out.println("Your weapon: " + playerWeapon);
            System.out.println("Lets start your adventure!");
            scanner.nextLine();
            System.out.println("\n------------------------------------------------------------------\n");
@@ -171,7 +170,7 @@ public class adventureGame {
             }
             else{
                 System.out.println("Guard: Hello there, " + userName + "! Sorry but I cannot let you in. You have been exiled and were told to never return!  \nGet out of here!");
-                enterScanner.nextLine();
+                scanner.nextLine();
                 townGate();
             }
 
@@ -181,7 +180,7 @@ public class adventureGame {
 
             System.out.println("Guard: Hey don't be stupid!\nThe guard hits you so hard that you know he means business.\n(You receive 1 damage point)\n");
             System.out.println("Your health is now: " + playerHealth);
-            enterScanner.nextLine();
+            scanner.nextLine();
             townGate();
         }
         else if(choice == 3){
@@ -405,6 +404,7 @@ public class adventureGame {
         System.out.println("\n1: Attack");
         System.out.println("2: Run");
         System.out.println("\n------------------------------------------------------------------\n");
+        scanner.nextLine();
 
         choice = scanner.nextInt();
 
@@ -517,7 +517,6 @@ public class adventureGame {
                 fight();
             }
         }
-        scanner.nextLine();
 
     }
 
@@ -585,7 +584,7 @@ public class adventureGame {
     public static void ending(){
         System.out.println("\n------------------------------------------------------------------\n");
         scanner.nextLine();
-        System.out.println(userName + " the brave hero looks at the guard");
+        System.out.println(userName + " the brave hero looks at the guard.");
         System.out.println("                    .oo.\n" +
                 "                       .\\.                                            ..\n" +
                 "                     ,'..''\\                                  ...oooo''\n" +
@@ -611,6 +610,7 @@ public class adventureGame {
                 " dp       |..\\      |..\\  |..\\          |..\\");
         scanner.nextLine();
 
+        System.out.println("\n------------------------------------------------------------------\n");
         System.out.println("                   _.--.    .--._\n" +
                 "                 .\"  .\"      \".  \".\n" +
                 "                ;  .\"    /\\    \".  ;\n" +
@@ -630,7 +630,6 @@ public class adventureGame {
                 "!     \\  \\  \\   \\                  /   /  /  /     !\n" +
                 ":      \\  \\  \\   \\                /   /  /  /      TK\n");
 
-        scanner.nextLine();
         System.out.println("Guard: Oh you killed that Dragon!?!? No way!!");
         System.out.println("Guard: Well you proved yourself! Exile lifted! \nWelcome back to Howlers Keep.");
         scanner.nextLine();

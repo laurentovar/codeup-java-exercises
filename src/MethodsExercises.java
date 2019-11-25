@@ -139,7 +139,27 @@ public class MethodsExercises {
         String yesNo = scanner.nextLine();
 
         if (yesNo.equalsIgnoreCase("y")){
-            //continue
+            //roll dice
+            int min = 1;
+            int range = diceSides;
+            //get random number between 1-to number of dice sides entered
+            int num1 = getRandomNumber(range, min);
+            int num2 = getRandomNumber(range, min);
+
+            //display results
+            System.out.println("You rolled " + num1 +" and " + num2);
+
+            //ask to roll again
+            System.out.println("Do you want to roll again? Y");
+            String rollAgain = scanner.nextLine();
+            //if roll again x
+            if(rollAgain.equalsIgnoreCase("y")){
+                diceRolling();
+            }else {
+                System.out.println("Exit");
+            }
+
+            //if they dont
         } else if (yesNo.equalsIgnoreCase("n")){
             //exit
             System.out.println("Exit");
@@ -149,6 +169,9 @@ public class MethodsExercises {
             diceRolling();
         }
 
+    }
+    public static int getRandomNumber (int range, int min){
+        return (int)(Math.random() * range) + min;
     }
 
 

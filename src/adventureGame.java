@@ -12,15 +12,13 @@ public class adventureGame {
     static int monsterHealth;
     static String playerWeapon;
     static int choice;
-    static int silverRing;
+    static int emerald;
 
     public static void main(String[] args) {
         adventureGame game;
         game = new adventureGame();
 
         game.startGame();
-        game.townGate();
-
 
 
     }
@@ -50,9 +48,9 @@ public class adventureGame {
                 "                  |,M8,  , `8%   ,,8% `8, `         , \\,        &\\     ,&##\n" +
                 "                 /8888%  888`    ```    `            `  `               ```");
         System.out.println("Ready to start the game? Y/N");
-       String input = scanner.nextLine();
+       String  input = scanner.nextLine();
 
-       if (input.equalsIgnoreCase("Y")){
+        if (input.equalsIgnoreCase("Y")){
            //===enter your name===
            System.out.println("Hi hero what is your name?");
             userName = scanner.nextLine();
@@ -94,11 +92,11 @@ public class adventureGame {
            System.out.println("Lets start your adventure!");
            scanner.nextLine();
            System.out.println("\n------------------------------------------------------------------\n");
+           townGate();
 
 
-       }else {
+       }else if (input.equalsIgnoreCase("n"))
            System.out.println("Exited the game!");
-       }
 
 
 
@@ -159,25 +157,25 @@ public class adventureGame {
         System.out.println("\n------------------------------------------------------------------\n");
 
         choice = scanner.nextInt();
-        if(choice==1){
-            if(silverRing==1){
+        if(choice == 1){
+            if(emerald == 1){
                 ending();
             }
             else{
-                System.out.println("Guard: Hello there, stranger. So your name is " + userName + "? \nSorry but we cannot let stranger enter our town.");
+                System.out.println("Guard: Hello there, " + userName + "? \nSorry but we cannot let you in. You have been exiled and were told to never return! Get out of here!");
                 enterScanner.nextLine();
                 townGate();
             }
 
         }
-        else if(choice==2){
+        else if(choice == 2){
             playerHealth = playerHealth-1;
             System.out.println("Guard: Hey don't be stupid.\n\nThe guard hit you so hard and you gave up.\n(You receive 1 damage)\n");
             System.out.println("Your HP: " + playerHealth);
             enterScanner.nextLine();
             townGate();
         }
-        else if(choice==3){
+        else if(choice == 3){
             crossRoad();
         }
         else{
@@ -195,16 +193,16 @@ public class adventureGame {
 
         choice = scanner.nextInt();
 
-        if(choice==1){
+        if(choice == 1){
             north();
         }
-        else if(choice==2){
+        else if(choice == 2){
             east();
         }
-        else if(choice==3){
+        else if(choice == 3){
             townGate();
         }
-        else if(choice==4){
+        else if(choice == 4){
             west();
         }
         else{
@@ -223,7 +221,7 @@ public class adventureGame {
 
         choice = scanner.nextInt();
 
-        if(choice==1){
+        if(choice == 1){
             crossRoad();
         }
         else{
@@ -233,9 +231,30 @@ public class adventureGame {
 
     public static void east(){
         System.out.println("\n------------------------------------------------------------------\n");
-        System.out.println("You walked into a forest and found a Long Sword!");
-        playerWeapon = "Long Sword";
-        System.out.println("Your Weapon: "+ playerWeapon);
+        System.out.println("You walked into a forest and found a new weapon!");
+        System.out.println("   ,   A           {}\n" +
+                "  / \\, | ,        .--.\n" +
+                " |    =|= >      /.--.\\\n" +
+                "  \\ /` | `       |====|\n" +
+                "   `   |         |`::`|\n" +
+                "       |     .-;`\\..../`;-.\n" +
+                "      /\\\\/  /  |...::...|  \\\n" +
+                "      |:'\\ |   /'''::'''\\   |\n" +
+                "       \\ /\\;-,/\\   ::   /\\--;\n" +
+                "       |\\ <` >  >._::_.<,<__>\n" +
+                "       | `\"\"`  /   ^^   \\|  |\n" +
+                "       |       |        |\\::/\n" +
+                "       |       |        |/|||\n" +
+                "       |       |___/\\___| '''\n" +
+                "       |        \\_ || _/\n" +
+                "       |        <_ >< _>\n" +
+                "       |        |  ||  |\n" +
+                "       |        |  ||  |\n" +
+                "       |       _\\.:||:./_\n" +
+                "       |      /____/\\____\\");
+        System.out.println("You got a Angelic axe");
+        playerWeapon = "Axe";
+        System.out.println("Your Weapon is now: "+ playerWeapon);
         System.out.println("\n\n1: Go back to the crossroad");
         System.out.println("\n------------------------------------------------------------------\n");
 
@@ -258,10 +277,10 @@ public class adventureGame {
 
         choice = scanner.nextInt();
 
-        if(choice==1){
+        if(choice == 1){
             fight();
         }
-        else if(choice==2){
+        else if(choice == 2){
             crossRoad();
         }
         else{
@@ -279,10 +298,10 @@ public class adventureGame {
 
         choice = scanner.nextInt();
 
-        if(choice==1){
+        if(choice == 1){
             attack();
         }
-        else if(choice==2){
+        else if(choice == 2){
             crossRoad();
         }
         else{
@@ -294,10 +313,12 @@ public class adventureGame {
         int playerDamage =0;
 
 
-        if(playerWeapon.equals("Knife")){
+        if(playerWeapon.equalsIgnoreCase("Knife")){
+            //gets a random number from 0-5
             playerDamage = new java.util.Random().nextInt(5);
         }
-        else if(playerWeapon.equals("Long Sword")){
+        else if(playerWeapon.equalsIgnoreCase("Axe")){
+            //gets a random number from 0-8
             playerDamage = new java.util.Random().nextInt(8);
         }
 
@@ -307,18 +328,23 @@ public class adventureGame {
 
         System.out.println("Monster HP: " + monsterHealth);
 
-        if(monsterHealth<1){ win(); } else if(monsterHealth>0){
+        if(monsterHealth <1 ){
+            win();
+        } else if(monsterHealth > 0){
             int monsterDamage =0;
 
+            //gets a random number from 0-4
             monsterDamage = new java.util.Random().nextInt(4);
 
             System.out.println("The monster attacked you and gave " + monsterDamage + " damage!");
 
             playerHealth = playerHealth - monsterDamage;
 
-            System.out.println("Player HP: " + playerHealth);
+            System.out.println("Player health is: " + playerHealth);
 
-            if(playerHealth<1){ dead(); } else if(playerHealth>0){
+            if(playerHealth < 1){
+                dead();
+            } else if(playerHealth > 0){
                 fight();
             }
         }
@@ -337,12 +363,19 @@ public class adventureGame {
     public static void win(){
         System.out.println("\n------------------------------------------------------------------\n");
         System.out.println("You killed the monster!");
-        System.out.println("The monster dropped a ring!");
-        System.out.println("You obtaind a silver ring!\n\n");
+        System.out.println("The monster dropped a stone!");
+        scanner.nextLine();
+        System.out.println("_______\n" +
+                "        .'_/_|_\\_'.\n" +
+                "        \\`\\  |  /`/\n" +
+                "         `\\\\ | //'\n" +
+                "            `\\|/`\n" +
+                "              `");
+        System.out.println("You obtained an Emerald!\n\n");
         System.out.println("1: Go east");
         System.out.println("\n------------------------------------------------------------------\n");
 
-        silverRing = 1;
+        emerald = 1;
 
         choice = scanner.nextInt();
         if(choice==1){

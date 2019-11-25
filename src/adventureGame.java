@@ -64,7 +64,7 @@ public class adventureGame {
             playerWeapon = "Sword";
 
             //welcome user
-           System.out.println("----------------------------------------");
+           System.out.println("\n------------------------------------------------------------------\n");
 
            System.out.println("                 {}\n" +
                    "                  .--.\n" +
@@ -93,7 +93,7 @@ public class adventureGame {
            System.out.println("Your weapon: " +playerWeapon);
            System.out.println("Lets start your adventure!");
            scanner.nextLine();
-           System.out.println("----------------------------------------");
+           System.out.println("\n------------------------------------------------------------------\n");
 
 
        }else {
@@ -105,8 +105,32 @@ public class adventureGame {
     }
     public static void townGate (){
         System.out.println("You are in front of the castle gate.");
+        System.out.println("   .\n" +
+                "  /:\\\n" +
+                "  |:|\n" +
+                "  |:|\n" +
+                "  |:|\n" +
+                "  |:|      __\n" +
+                ",_|:|_,   /  )                     *_   _   _   _   _   _   _   *\n" +
+                "  (Oo    / _I_                     | `_' `-' `_' `-' `_' `-' `_'|\n" +
+                "   +\\ \\  || __|            ^       |                            |       ^\n" +
+                "      \\ \\||___|            |       |                            |       |\n" +
+                "        \\ /.:.\\-\\          |  (*)  |_   _   _   _   _   _   _   |  \\^/  |\n" +
+                "         |.:. /-----\\      | _<\">_ | `_' `-' `_' `-' `_' `-' `_'| _(#)_ |\n" +
+                "         |___|  oOo  |    o+o \\a/ \\0                            0/ \\a/ (=)\n" +
+                "         /   ||     0'\\a-a/\\/                            \\/\\a-a/`0\n" +
+                "        |_____\\  :  /        /_^_\\ |                            | /_^_\\\n" +
+                "         | |  \\ \\:/          || || |                            | || ||\n" +
+                "         | |   | |           d|_|b_T____________________________T_d|_|b\n" +
+                "         \\ /   | \\___              /                           /\n" +
+                "         / |   \\_____\\         /                              /\n" +
+                "         `-'               /                                 /\n" +
+                "________________________/                                   /___________\n" +
+                "                                                               ______\n");
         scanner.nextLine();
-        System.out.println("----------------------------------------");
+        System.out.println("\n------------------------------------------------------------------\n");
+        System.out.println("A guard appears in front of you.");
+
         System.out.println("                   _.--.    .--._\n" +
                 "                 .\"  .\"      \".  \".\n" +
                 "                ;  .\"    /\\    \".  ;\n" +
@@ -126,14 +150,13 @@ public class adventureGame {
                 "!     \\  \\  \\   \\                  /   /  /  /     !\n" +
                 ":      \\  \\  \\   \\                /   /  /  /      TK\n");
 
-        System.out.println("A guard is standing in front of you.");
         scanner.nextLine();
         System.out.println("What do you want to do?");
         scanner.nextLine();
         System.out.println("1: Be his friend and talk to him");
         System.out.println("2. Attack the guard with your sword!");
         System.out.println("3. Leave the guard alone");
-        System.out.println("----------------------------------------");
+        System.out.println("\n------------------------------------------------------------------\n");
 
         choice = scanner.nextInt();
         if(choice==1){

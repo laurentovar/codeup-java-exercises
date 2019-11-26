@@ -469,6 +469,8 @@ public class adventureGame {
 
         System.out.println("Dragon health is now: " + monsterHealth);
 
+        System.out.println("\n------------------------------------------------------------------\n");
+
         if(monsterHealth <1 ){
             win();//calls when the monster reaches 0
         } else if(monsterHealth > 0){
@@ -607,7 +609,7 @@ public class adventureGame {
                 "         |--|     \\--\\.       ./--/' \\--\\\n" +
                 "         |--|      |--|     ./--/'    \\--\\.\n" +
                 "         '\\-|      '\\-|    /--/'       \\--|\n" +
-                " dp       |..\\      |..\\  |..\\          |..\\");
+                "          |..\\      |..\\  |..\\          |..\\");
         scanner.nextLine();
 
         System.out.println("\n------------------------------------------------------------------\n");
@@ -631,7 +633,7 @@ public class adventureGame {
                 ":      \\  \\  \\   \\                /   /  /  /      TK\n");
 
         System.out.println("Guard: Oh you killed that Dragon!?!? No way!!");
-        System.out.println("Guard: Well you proved yourself! Exile lifted! \nWelcome back to Howlers Keep.");
+        System.out.println("Guard: Well you proved yourself! Exile lifted! \nGuard: Welcome back to Howlers Keep.");
         scanner.nextLine();
 
         System.out.println("\n\n                            THE END                    ");

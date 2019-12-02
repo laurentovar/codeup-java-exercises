@@ -1,23 +1,3 @@
-//public class Person {
-////
-////    public String firstName;
-////    public String lastName;
-//////    public static boolean liveOnEarth = true;
-////
-////
-////    public String getName() {
-////        return ("Your name is " + this.firstName + this.lastName);
-////    }
-////    public  void  setName (String name){
-////        System.out.println(name + " is your best friend");
-////
-////    }
-////    public String sayHello() {
-////        return ("Hello from "+ this.firstName + this.lastName + "!");
-////    }
-////
-////
-////}
 
 public class Person {
 
@@ -46,27 +26,27 @@ public class Person {
 
     // Create a main method on the class that creates a new Person object and tests the above methods.
     public static void main(String[] args) {
-        Person elsa = new Person("Elsa");
+        Person scobby = new Person("Scobby");
         // Rewrite name to add last name, this allows us to test getName() and setName()
-        elsa.setName(elsa.getName() +  " Agnarr");
+        scobby.setName(scobby.getName() +  " Doo");
         // Test new name
-        elsa.sayHello();
+        scobby.sayHello();
 
         // 2. Understanding references
-        Person person1 = new Person("John");
-        Person person2 = new Person("John");
+        Person person1 = new Person("Fred");
+        Person person2 = new Person("Fred");
         System.out.println(person1.getName().equals(person2.getName()));
         System.out.println(person1 == person2);
 
-        person1 = new Person("John");
+        person1 = new Person("Fred");
         person2 = person1;
         System.out.println(person1 == person2);
 
-        person1 = new Person("John");
+        person1 = new Person("Fred");
         person2 = person1;
         System.out.println(person1.getName());
         System.out.println(person2.getName());
-        person2.setName("Jane");
+        person2.setName("Shaggy");
         System.out.println(person1.getName());
         System.out.println(person2.getName());
 

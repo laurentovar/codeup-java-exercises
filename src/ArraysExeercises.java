@@ -15,30 +15,17 @@ public class ArraysExeercises {
             }
 
                 String[] people = Arrays.copyOf(persons, 4);
-
-            for (int i = 0; i < people.length; i++){
-                System.out.println("new person");
-            }
-
-
-
+                            System.out.println(Arrays.toString(people));
+                            people[3] = "Shaggy";
+                             System.out.println(Arrays.toString(people));
 
         }
         //make static method named addPerson. accept an array of person objects as well as a single person
             //to add to the passed array. It should return an array whose length is 1 > than passed array
-        private String name;
-    class addPerson{
              String  person;
             public  void addPerson (String name) {
                 person = name;
             }
-        }
-    public String getName(){
-        return this.name;
-    }
-    public void setName(String name){
-        this.name = name;
-    }
 
 }
 

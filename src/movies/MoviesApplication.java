@@ -1,4 +1,5 @@
 package movies;
+import java.util.Arrays;
 import util.Input;
 import java.util.Scanner;
 
@@ -20,6 +21,8 @@ public class MoviesApplication {
         //put in the input
 //        Input movieInput = new Input();
         int movieChoice = reader.nextInt(); // Scans the next token of the input as an int.
+
+//        MoviesArray newArray = new MoviesArray();
 
 
         if (movieChoice == 1){

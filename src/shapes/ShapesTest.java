@@ -11,5 +11,19 @@ public class ShapesTest {
 
         //verify that the getArea returns 20
         System.out.println(box1.getArea());
+
+        Rectangle box2 = new Square(5);
+        //verify that the getPerimeter returns 20
+        System.out.println(box2.getPerimeter());
+
+        //verify that the getPerimeter returns 25
+        System.out.println(box2.getArea());
+
+        //check to see if the override is working
+        Square box3 = new Square(6);
+        System.out.println(box3.getArea());
+        System.out.println(box3.getPerimeter());
+
+
     }
 }

@@ -1,3 +1,5 @@
+package Codeup;
+
 abstract class Student {
 
     protected String firstName;

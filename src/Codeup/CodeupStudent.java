@@ -1,3 +1,5 @@
+package Codeup;
+
 public class CodeupStudent extends Student {
 
     public CodeupStudent(String [] information, boolean graduated){

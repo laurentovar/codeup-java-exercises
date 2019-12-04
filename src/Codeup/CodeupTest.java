@@ -1,3 +1,7 @@
+package Codeup;
+
+import Codeup.CodeupStudent;
+
 public class CodeupTest {
     public static void main(String[] args) {
 

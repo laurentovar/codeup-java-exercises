@@ -31,11 +31,16 @@ public class Input {
     }
 
     public int getInt(){
+        //make sure the value returned is actually an int
         System.out.println("Give me a number");
         return Integer.parseInt(getString());
+
+//        Integer.valueOf(String s);
+
     }
 
     public double getDouble(double min, double max){
+        //make sure the value returned is actually an int
         double number = getDouble();
 
         if(number < min){
@@ -45,6 +50,8 @@ public class Input {
         }
 
         return number;
+//        Double.valueOf(String s);
+
     }
 
     public double getDouble(){

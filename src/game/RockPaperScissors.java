@@ -35,23 +35,31 @@ public class RockPaperScissors {
 
     //get the results
     public static void getResults(String usersMove, String computersMove){
-        System.out.println("The computer played " + computersMove);
+        System.out.println("The computer played " + computersMove + "\n");
 
         if(usersMove.equalsIgnoreCase(computersMove)){
+
+            System.out.println("----------------Results--------------");
             System.out.println("It's a tie!");
         }
               //===check if the user inputs rock====//
         else if(usersMove.equalsIgnoreCase("rock")){
             if (computersMove.equalsIgnoreCase("paper")){
+
+                System.out.println("----------------Results--------------");
                 System.out.println("You lose! Sorry, paper covers rock!");
             }
             else if (computersMove.equalsIgnoreCase("scissors")){
+
+                System.out.println("----------------Results--------------");
                 System.out.println("Yay you win! Rock crushes scissors!");
             }
         }
                 //===check if user inputs paper===//
         else if (usersMove.equalsIgnoreCase("paper")){
             if (computersMove.equalsIgnoreCase("scissors")){
+
+                System.out.println("----------------Results--------------");
                 System.out.println("You lose! Sorry, scissors cuts paper!");
             }
             else if (computersMove.equalsIgnoreCase("rock")){
@@ -61,9 +69,13 @@ public class RockPaperScissors {
                 //===check if user inputs scissors===//
         else if (usersMove.equalsIgnoreCase("scissors")){
             if(computersMove.equalsIgnoreCase("rock")){
+
+                System.out.println("----------------Results--------------");
                 System.out.println("You lose! Sorry, rock crushes scissors!");
             }
             else if (computersMove.equalsIgnoreCase("paper")){
+
+                System.out.println("----------------Results--------------");
                 System.out.println("Yay you win! Scissors cuts paper!");
             }
         }
@@ -72,7 +84,6 @@ public class RockPaperScissors {
         }
     }
     public static void main(String[] args) {
-        System.out.println("Lets play a game!");
         System.out.println("Please enter your choice (Rock, Paper, Scissors):");
 
 
@@ -85,17 +96,4 @@ public class RockPaperScissors {
             System.out.println("Invalid input... You put in " + userInput);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

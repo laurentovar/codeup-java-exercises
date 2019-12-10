@@ -1,4 +1,4 @@
-package game;
+package laurenWeek1;
 import java.util.Random;
 import java.util.Scanner;
 

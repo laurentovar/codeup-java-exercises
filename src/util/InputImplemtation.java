@@ -13,3 +13,4 @@ public class InputImplemtation  {
         System.out.println(input.yesNo());
     }
 }
+

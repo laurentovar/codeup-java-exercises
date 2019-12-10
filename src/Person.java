@@ -27,7 +27,7 @@ public class Person {
     // Create a main method on the class that creates a new Person object and tests the above methods.
     public static void main(String[] args) {
         Person scobby = new Person("Scobby");
-        // Rewrite name to add last name, this allows us to test getName() and setName()
+        // Rewrite name to add last name, this allows us to test.test getName() and setName()
         scobby.setName(scobby.getName() +  " Doo");
         // Test new name
         scobby.sayHello();

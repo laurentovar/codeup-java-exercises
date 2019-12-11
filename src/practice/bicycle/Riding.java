@@ -4,8 +4,8 @@ public class Riding {
     public static void main(String[] args) {
         //make a new bike
 
-        bike blueBike = new bike(30, 2);
-        bike tricycle = new bike(20, 4);
+        Bike blueBike = new Bike(30, 2);
+        Bike tricycle = new Bike(20, 4);
 
         //if the unicycle is slower than bike increase the speed
         if (tricycle.getSpeed() < blueBike.getSpeed()){

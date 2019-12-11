@@ -1,13 +1,13 @@
 package practice.bicycle;
 
-public class bike {
+public class Bike {
     public static int wheels = 2; //static field
     private int speed; //instance field
     private int gear;
 
     //constructor
 
-    public bike(int speed, int gear) {
+    public Bike(int speed, int gear) {
         this.speed = speed;
         this.gear = gear;
     }

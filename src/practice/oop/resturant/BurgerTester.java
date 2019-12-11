@@ -1,4 +1,4 @@
-package practice.resturant;
+package practice.oop.resturant;
 
 public class BurgerTester {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package practice.resturant;
+package practice.oop.resturant;
 
 public class RestaurantDish {
     public String nameOfDish;

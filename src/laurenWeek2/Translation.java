@@ -1,28 +1,38 @@
 package laurenWeek2;
 
+import java.util.Scanner;
+
 public class Translation {
-    public static String pigLatin(String str) {
-        char ch = str.charAt(str.length()-1);
-        str = str.toLowerCase().substring(0, str.length()-1);
-        String parts[] = str.split(" ");
-        String res = "";
-        for(int i=0;i<parts.length;i++) {
-            if("AEIOUaeiou".indexOf(parts[i].charAt(0)) != -1) {
-                res = res + parts[i] + "way" +" ";
-            }
-            else {
-                res = res + parts[i].substring(1) + parts[i].substring(0, 1) + "ay"+" ";
+public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter a word you would like to translate to Pig Latin?: ");
+    String input = scanner.next();
+    System.out.println("You entered: " + input);
+    System.out.println("Translation: " + translate(input));
+}
+
+
+    public static String translate (String word) {
+
+        word = word.substring(1);
+
+        String transition = word.toLowerCase();
+
+        //array of vowels
+        char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+
+        //This will return the first char of the string
+        char first = transition.charAt(0);
+
+
+        for (int i = 0; i < vowels.length; i++) {
+            if (first == vowels[i]) {
+                return word + "way";
             }
         }
-        res = res.substring(0, 1).toUpperCase() + res.substring(1);
-        return res.trim()+ch;
+        word += first + "ay";
 
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println(pigLatin("Cats are great pets"));
-        System.out.println(pigLatin("Tom got a small piece of pie"));
-        System.out.println(pigLatin("He told us a very exciting tale"));
+        return word;
     }
 }
